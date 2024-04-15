@@ -1,9 +1,10 @@
 body {
     min-height: 100vh;
     height: 150vh;
-    --mian-bg-color: #1c1c1c;
+    --main-bg-color: #1c1c1c;
+    --main-second-color: #36a8e1;
     /* background-image: url(./img/logo.png);  */
-    background-color: var(--mian-bg-color);  
+    background-color: var(--main-bg-color);  
 }
 
 .main{
@@ -26,5 +27,16 @@ body {
 
 .btn:hover{
     color: initial;
+}
+
+.carousel-caption p, .carousel-caption h5{
+    width: fit-content;
+}
+
+.carousel-caption{
+    padding: 15px;  
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 }
 
