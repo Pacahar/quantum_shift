@@ -1,0 +1,30 @@
+body {
+    min-height: 100vh;
+    height: 150vh;
+    --mian-bg-color: #1c1c1c;
+    /* background-image: url(./img/logo.png);  */
+    background-color: var(--mian-bg-color);  
+}
+
+.main{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.navbar {
+    backdrop-filter: blur(50px);
+}
+
+.modal {
+    color: white;
+}
+
+.btn:hover{
+    color: initial;
+}
+
