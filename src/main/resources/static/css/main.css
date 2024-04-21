@@ -1,28 +1,5 @@
-body {
-    min-height: 100vh;
-    height: 150vh;
-    --main-bg-color: #1c1c1c;
-    --main-second-color: #36a8e1;
-    /* background-image: url(./img/logo.png);  */
-    background-color: var(--main-bg-color);  
-}
-
-.main{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.navbar {
-    backdrop-filter: blur(50px);
-}
-
-.modal {
-    color: white;
+html::-webkit-scrollbar {
+    display: none;
 }
 
 .btn:hover{

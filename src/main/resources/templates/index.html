@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -10,24 +10,9 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg position-fixed w-100 top-0" style="z-index: 100;" data-bs-theme="dark">
-        <div class="container-fluid" style="min-width: 500px; width: 50vw;">
-            <a class="navbar-brand" href="#"><img src="/css/img/logo(sim).png" alt="QUANTUM SHIFT"
-                    style="max-height: 50px;"></a>
-            <div class="btns">
-                <button type="button" class="btn mx-2" data-bs-toggle="modal" data-bs-target="#loginModal"
-                    style="border: 1px solid white">
-                    Вход
-                </button>
-                <button type="button" class="btn mx-2" data-bs-toggle="modal" data-bs-target="#regModal"
-                    style="border: 1px solid white">
-                    Регистрация
-                </button>
-            </div>
-        </div>
-    </nav>
-    <main>
+<body style="min-height: 100vh; --main-bg-color: #1c1c1c; --main-second-color: #36a8e1; background-color: var(--main-bg-color); -ms-overflow-style: none; scrollbar-width: none;">
+    <header th:insert="blocks/header ::  header"></header>
+    <main style="min-height: 100vh">
         <img src="/css/img/3D-name.png" class="position-absolute h-50"
         style="top: 100px; left: 25%; z-index: -1; filter: drop-shadow(0 0 300px #36a8e141)">
 
@@ -74,65 +59,15 @@
         </div>
 
     </main>
-    
 
-    <!-- Modal Log in -->
-    <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true"
-        data-bs-theme="dark">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="loginLabel">Вход</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="loginInputEmail" class="form-label">Почта</label>
-                            <input type="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginInputPassword" class="form-label">Пароль</label>
-                            <input type="password" class="form-control" id="loginInputPassword">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Войти</button>
-                    </form>
-                </div>
-            </div>
+    <div class="footer" style="bottom: 0; left: 0; right: 0; height: 300px; backdrop-filter: blur(50px); background-color: rgba(256, 256, 256, 0.01); display: flex; flex-direction: column; align-items: center; padding: 20px;">
+        <div style="color: white; width: 50vw; font-size: 1.5rem;">
+            Курсовая работа четвертого семестра <br>Студента группы ИКБО-30-22 <br>Соколовского Кирилла
         </div>
     </div>
 
-    <!-- Modal Sign in -->
-    <div class="modal fade " id="regModal" tabindex="-1" aria-labelledby="regLabel" aria-hidden="true"
-        data-bs-theme="dark">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="regLabel">Регистрация</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Почта</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Соглашаюсь пользовательским
-                                соглашением</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <div th:insert="blocks/modals :: modals"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

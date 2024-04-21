@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
     @GetMapping("/")
-    public String main(Model model) {
-        return"index.html";
+    public String index(Model model) {
+        model.addAttribute("logged", false);
+        return"index";
     }
 
-    @GetMapping("/index.html")
-    public String qwerty(Model model) {
-        return"index.html";
+    @GetMapping("/logged")
+    public String indexLogged(Model model){
+        model.addAttribute("logged", true);
+        return "index";
     }
 }
