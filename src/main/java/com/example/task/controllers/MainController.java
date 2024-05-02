@@ -17,4 +17,9 @@ public class MainController {
         model.addAttribute("logged", true);
         return "index";
     }
+
+    @GetMapping("/admin")
+    public String adminPanel(Model model){
+        return "admin";
+    }
 }

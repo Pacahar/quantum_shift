@@ -12,13 +12,13 @@
 
 <body style="min-height: 100vh; --main-bg-color: #1c1c1c; --main-second-color: #36a8e1; background-color: var(--main-bg-color); -ms-overflow-style: none; scrollbar-width: none;">
     <header th:insert="blocks/header ::  header"></header>
-    <main style="min-height: 100vh">
+    <main style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <img src="/css/img/3D-name.png" class="position-absolute h-50"
         style="top: 100px; left: 25%; z-index: -1; filter: drop-shadow(0 0 300px #36a8e141)">
 
         <div class="carousel_wrap;" style="margin-top: calc(50vh + 100px); padding: 20px; backdrop-filter: blur(5px);">
-            <h1 style="color: white; font-size: 3rem; padding: 30px; margin-left: 25vw;">Наши клубы</h1>
-            <div id="carousel" class="carousel slide" style="width: 50vw; left: calc(50vw - 25vw); ">
+            <h1 style="color: white; font-size: 3rem; padding: 30px;">Наши клубы</h1>
+            <div id="carousel" class="carousel slide" style="width: 50vw;">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -56,6 +56,30 @@
                   <span class="visually-hidden">Next</span>
                 </button>
             </div>
+        </div>
+
+        <div class="sections" style="width:50%; margin: 20px;">
+          <button class="btn mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSections" style="margin-bottom: 20px; border: 1px solid white; color: white">
+            Дополнительные кружки
+          </button>
+          <div class="collapse" id="collapseSections">
+            <div class="card card-body" style="display: flex; flex-direction: column;">
+              <div class="section">
+                <p class="section-name">Name</p>
+                <p class="section-description">description</p>
+                <p class="section-start">start time</p>
+                <p class="section-duration">duration</p>
+                <p class="section-day">day</p>
+              </div>
+              <div class="section">
+                <p class="section-name">Name</p>
+                <p class="section-description">description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae eum eaque voluptates necessitatibus placeat, libero dolor, illum tempore, corporis dolorum consequuntur quae. Eum magnam cum maxime vitae repudiandae atque. Aut.</p>
+                <p class="section-start">start time</p>
+                <p class="section-duration">duration</p>
+                <p class="section-day">day</p>
+              </div>
+            </div>
+          </div>
         </div>
 
     </main>

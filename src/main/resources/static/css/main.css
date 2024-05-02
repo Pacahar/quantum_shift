@@ -17,3 +17,12 @@ html::-webkit-scrollbar {
     border-radius: 15px;
 }
 
+.section{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
