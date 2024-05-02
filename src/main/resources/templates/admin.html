@@ -4,32 +4,49 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<form>
-    <label for="name">Название кружка:</label><br>
-    <input type="text" id="name" name="name"><br><br>
+    <body>
+        <form id="postForm">
+            <label for="name">Название кружка:</label><br>
+            <input type="text" id="name" name="name"><br><br>
 
-    <label for="description">Описание кружка:</label><br>
-    <textarea id="description" name="description"></textarea><br><br>
+            <label for="description">Описание кружка:</label><br>
+            <textarea id="description" name="description"></textarea><br><br>
 
-    <label for="start-time">Время начала:</label><br>
-    <input type="time" id="start-time" name="start-time"><br><br>
+            <label for="start-time">Время начала:</label><br>
+            <input type="time" id="time" name="time"><br><br>
 
-    <label for="duration">Продолжительность:</label><br>
-    <input type="number" id="duration" name="duration"><br><br>
+            <label for="duration">Продолжительность:</label><br>
+            <input type="number" id="duration" name="duration"><br><br>
 
-    <label for="day-of-week">День недели:</label><br>
-    <select id="day-of-week" name="day-of-week">
-        <option value="monday">Понедельник</option>
-        <option value="tuesday">Вторник</option>
-        <option value="wednesday">Среда</option>
-        <option value="thursday">Четверг</option>
-        <option value="friday">Пятница</option>
-        <option value="saturday">Суббота</option>
-        <option value="sunday">Воскресенье</option>
-    </select><br><br>
+            <label for="day">День недели:</label><br>
+            <select id="day" name="day">
+                <option value="monday">Понедельник</option>
+                <option value="tuesday">Вторник</option>
+                <option value="wednesday">Среда</option>
+                <option value="thursday">Четверг</option>
+                <option value="friday">Пятница</option>
+                <option value="saturday">Суббота</option>
+                <option value="sunday">Воскресенье</option>
+            </select><br><br>
 
-    <input type="submit" value="Отправить">
-</form>
-</body>
+            <button id="submit_button" type="submit" class="btn-0">Добавить секцию</button>
+        </form>
+    </body>
+
+    <script>
+        document.getElementById("postForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
+        let formData = new FormData(document.getElementById("postForm"));
+        fetch("/admin", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            // Обработка ответа, если необходимо
+            console.log("POST запрос выполнен успешно");
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
+            event.target.reset();
+        });
+    </script>
 </html>
