@@ -15,21 +15,21 @@
     <main style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <h1 class="position-absolute" style="top: 100px; left: 25%; color: var(--main-second-color)">Admin panel</h1>
 
-        <form style="width: 50%; background-color: var(--main-second-color); border: 2px solid black; border-radius: 25px; padding: 20px; margin: 200px; display: flex; flex-direction: column; align-items: center;">
-            <label for="name">Название кружка:</label><br>
-            <input type="text" id="name" name="name" style="width: 80%"><br><br>
+        <form class="admin-form" style="width: 50%; color: white; background-color: #262626; border-radius: 10px; padding: 40px; margin: 200px; display: flex; flex-direction: column; align-items: start;">
+            <label for="name">Название кружка:</label>
+            <input type="text" id="name" name="name"><br><br>
         
-            <label for="description">Описание кружка:</label><br>
-            <textarea id="description" name="description" style="width: 80%"></textarea><br><br>
+            <label for="description">Описание кружка:</label>
+            <textarea id="description" name="description"></textarea><br><br>
         
-            <label for="start-time">Время начала:</label><br>
-            <input type="time" id="start-time" name="start-time" style="width: 80%"><br><br>
+            <label for="start-time">Время начала:</label>
+            <input type="time" id="start-time" name="start-time" style="width: 80px"><br><br>
         
-            <label for="duration">Продолжительность:</label><br>
-            <input type="number" id="duration" name="duration" style="width: 80%"><br><br>
+            <label for="duration">Продолжительность:</label>
+            <input type="number" id="duration" name="duration" style="width: 80px"><br><br>
         
-            <label for="day-of-week">День недели:</label><br>
-            <select id="day-of-week" name="day-of-week" style="width: 80%">
+            <label for="day-of-week">День недели:</label>
+            <select id="day-of-week" name="day-of-week" style="width: 8rem">
                 <option value="monday">Понедельник</option>
                 <option value="tuesday">Вторник</option>
                 <option value="wednesday">Среда</option>
@@ -39,7 +39,7 @@
                 <option value="sunday">Воскресенье</option>
             </select><br><br>
         
-            <input type="submit" value="Отправить">
+            <input class="btn" type="submit" value="Отправить" style="color: white; width: 8rem; border-radius: 10px; border: 1px solid white">
         </form>
 
     </main>
