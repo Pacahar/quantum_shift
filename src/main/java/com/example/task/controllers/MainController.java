@@ -22,4 +22,9 @@ public class MainController {
     public String adminPanel(Model model){
         return "admin";
     }
+
+    @GetMapping("/reg")
+    public String registration(Model model){
+        return "registration";
+    }
 }

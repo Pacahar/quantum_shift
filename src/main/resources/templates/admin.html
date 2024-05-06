@@ -13,13 +13,13 @@
 <body style="min-height: 100vh; --main-bg-color: #1c1c1c; --main-second-color: #36a8e1; background-color: var(--main-bg-color); -ms-overflow-style: none; scrollbar-width: none;">
     <header th:insert="blocks/header ::  header"></header>
     <main style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <h1 class="position-absolute" style="top: 100px; left: 25%; color: var(--main-second-color)">Admin panel</h1>
+        <h1 class="position-absolute" style="top: 100px; left: 25%; color: var(--main-second-color)">Admin panel</h1>
 
         <form class="admin-form" style="width: 50%; color: white; background-color: #262626; border-radius: 10px; padding: 40px; margin: 200px; display: flex; flex-direction: column; align-items: start;">
-            <label for="name">Название кружка:</label>
+            <label for="name">Название секции:</label>
             <input type="text" id="name" name="name"><br><br>
         
-            <label for="description">Описание кружка:</label>
+            <label for="description">Описание секции:</label>
             <textarea id="description" name="description"></textarea><br><br>
         
             <label for="start-time">Время начала:</label>

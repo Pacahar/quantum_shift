@@ -35,3 +35,12 @@ html::-webkit-scrollbar {
     min-height: 2rem;
 }
 
+.reg-form input, .reg-form textarea, .reg-form select, .reg-form option{
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #252525;
+    width: calc(100% - 20px);
+    min-height: 2rem;
+}
+
