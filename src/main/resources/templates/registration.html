@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Регистрация</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+<div class="testbox">
+    <h1>Регистрация</h1>
+    <form id="registration" class="reg_form">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="password">Пароль:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="subscription">Длительность абонемента (в месяцах):</label><br>
+        <input type="number" id="subscription" name="subscription" min="1" required><br><br>
+
+        <label for="freezeDays">Количество дней для заморозки:</label><br>
+        <input type="number" id="freezeDays" name="freeze-days" min="1" required><br><br>
+
+        <button id="reg-button" type="submit" class="btn-0">Зарегистрироваться</button>
+    </form>
+
+    <script>
+        document.getElementById("registration").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let formData = new FormData(document.getElementById("registration"));
+        fetch("/registration", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            console.log("POST запрос выполнен успешно");
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
+            event.target.reset();
+        });
+    </script>
+</div>
+</body>
+</html>
