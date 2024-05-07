@@ -23,7 +23,7 @@ public class MainController {
         return "admin";
     }
 
-    @GetMapping("/reg")
+    @GetMapping("/registration")
     public String registration(Model model){
         return "registration";
     }

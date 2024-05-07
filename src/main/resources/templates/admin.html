@@ -15,21 +15,21 @@
     <main style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <h1 class="position-absolute" style="top: 100px; left: 25%; color: var(--main-second-color)">Admin panel</h1>
 
-        <form class="admin-form" style="width: 50%; color: white; background-color: #262626; border-radius: 10px; padding: 40px; margin: 200px; display: flex; flex-direction: column; align-items: start;">
+        <form id="sectionForm" class="admin-form" style="width: 50%; color: white; background-color: #262626; border-radius: 10px; padding: 40px; margin: 200px; display: flex; flex-direction: column; align-items: start;">
             <label for="name">Название секции:</label>
             <input type="text" id="name" name="name"><br><br>
         
             <label for="description">Описание секции:</label>
             <textarea id="description" name="description"></textarea><br><br>
         
-            <label for="start-time">Время начала:</label>
-            <input type="time" id="start-time" name="start-time" style="width: 80px"><br><br>
+            <label for="time">Время начала:</label>
+            <input type="time" id="time" name="start-time" style="width: 80px"><br><br>
         
             <label for="duration">Продолжительность:</label>
             <input type="number" id="duration" name="duration" style="width: 80px"><br><br>
         
-            <label for="day-of-week">День недели:</label>
-            <select id="day-of-week" name="day-of-week" style="width: 8rem">
+            <label for="day">День недели:</label>
+            <select id="day" name="day" style="width: 8rem">
                 <option value="monday">Понедельник</option>
                 <option value="tuesday">Вторник</option>
                 <option value="wednesday">Среда</option>
@@ -38,8 +38,8 @@
                 <option value="saturday">Суббота</option>
                 <option value="sunday">Воскресенье</option>
             </select><br><br>
-        
-            <input class="btn" type="submit" value="Отправить" style="color: white; width: 8rem; border-radius: 10px; border: 1px solid white">
+            
+            <button id="submit_button" type="submit" class="btn" style="color: white; width: 8rem; border-radius: 10px; border: 1px solid white">Добавить секцию</button>
         </form>
 
     </main>
@@ -52,6 +52,23 @@
 
 
     <div th:insert="blocks/modals :: modals"></div>
+
+    <script>
+        document.getElementById("sectionForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
+        let formData = new FormData(document.getElementById("postForm"));
+        fetch("/admin", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            // Обработка ответа, если необходимо
+            console.log("POST запрос выполнен успешно");
+        }).catch(error => {
+            console.error('Ошибка при отправке запроса:', error);
+        });
+            event.target.reset();
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
