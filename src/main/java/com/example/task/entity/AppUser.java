@@ -26,4 +26,7 @@ public class AppUser {
     private Integer subscription;
     private Integer freezeDays;
     private String roles;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Section> sections = new ArrayList<>();
 }

@@ -1,0 +1,29 @@
+<div th:fragment="header">
+    <nav th:unless="${logged}" class="navbar navbar-expand-lg position-fixed w-100 top-0" style="z-index: 100; backdrop-filter: blur(50px);" data-bs-theme="dark">
+        <div class="container-fluid" style="min-width: 500px; width: 50vw;">
+            <a class="navbar-brand" href="/"><img src="/css/img/logo(sim).png" alt="QUANTUM SHIFT"
+                                                  style="max-height: 50px;"></a>
+            <div class="btns">
+                <a href="/login" type="button" class="btn" style="border: 1px solid white">
+                    Вход
+                </a>
+                <a href="/registration" type="button" class="btn" style="border: 1px solid white">
+                    Регистрация
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <nav th:if="${logged}" class="navbar navbar-expand-lg position-fixed w-100 top-0" style="z-index: 100; backdrop-filter: blur(50px);" data-bs-theme="dark">
+        <div class="container-fluid" style="min-width: 500px; width: 50vw;">
+            <a class="navbar-brand" href="/"><img src="/css/img/logo(sim).png" alt="QUANTUM SHIFT"
+                                                  style="max-height: 50px;"></a>
+            <div class="btns">
+                <a class="btn mx-2" href="/profile"
+                        style="height: 100%">
+                    <img src="/css/img/profile-icon.png" alt="profile" style="filter: invert(1); border: none; max-height: 30px;">
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>

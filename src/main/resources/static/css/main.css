@@ -1,0 +1,58 @@
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px;
+    border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--main-second-color);
+  border-radius: 2px;
+}
+
+.btn:hover{
+    color: initial;
+}
+
+.carousel-caption p, .carousel-caption h5{
+    width: fit-content;
+}
+
+.carousel-caption{
+    padding: 15px;  
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    color: white;
+}
+
+.admin-form input, .admin-form textarea, .admin-form select, .admin-form option{
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #252525;
+    width: calc(100% - 20px);
+    min-height: 2rem;
+}
+
+.reg-form input, .reg-form textarea, .reg-form select, .reg-form option{
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #252525;
+    width: calc(100% - 20px);
+    min-height: 2rem;
+}
+

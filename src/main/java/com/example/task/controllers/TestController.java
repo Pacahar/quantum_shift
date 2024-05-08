@@ -26,8 +26,8 @@ public class TestController {
     }
 
     @RequestMapping(value = "/postman", method = RequestMethod.GET)
-    public ResponseEntity<List<AppUser>> readAll() {
-        return new ResponseEntity<>(userService.readAll(), HttpStatus.OK);
+    public ResponseEntity<List<Section>> readAll() {
+        return new ResponseEntity<>(sectionService.readAll(), HttpStatus.OK);
     }
 
 
