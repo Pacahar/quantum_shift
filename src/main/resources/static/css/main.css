@@ -29,12 +29,13 @@ html::-webkit-scrollbar {
 }
 
 .section{
+    height: 150%;
     display: flex;
     flex-direction: column;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 3px solid var(--main-second-color);
     color: white;
 }
 

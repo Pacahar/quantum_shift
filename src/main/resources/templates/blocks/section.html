@@ -1,19 +1,17 @@
-<div th:fragment="section">
-    <div class="section">
-        <h2 th:text="${el.name}"></h2>
-        <p th:text="${el.description}"></p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 2fr 1fr; align-items: center;">
-            <div style="display: flex; flex-direction: row;">Начало:&nbsp<p th:text="${el.time}" style="margin: 0;"></p></div>
-            <p th:text="${el.day}" style="margin: 0;"></p>
-            <div style="display: flex; flex-direction: row;">Продолжительность:&nbsp<p th:text="${el.duration}" style="margin: 0;"></p>&nbspчас(а)</div>
-            <form th:if="${logged and !profile}" id="addSeсtionToList" method="get">
-                <input type="text" name="sectionId" th:value="${el.id}" style="display: none;">
-                <button th:if="${!profile}" class="btn" type="submit" style="border: 1px solid white; color: white; width: fit-content; justify-self: end;">Записаться</button>
-                <button th:if="${profile}" class="btn" type="submit" style="border: 1px solid white; color: white; width: fit-content; justify-self: end;">Удалить</button>
-            </form>
-        </div>
 
-      </div>
+<div th:fragment="section" class="section" style="width:100%">
+    <h2 th:text="${el.name}"></h2>
+    <p th:text="${el.description}"></p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 2fr 1fr; align-items: center; width: 100%">
+        <div style="display: flex; flex-direction: row;">Начало:&nbsp<p th:text="${el.time}" style="margin: 0;"></p></div>
+        <p th:text="${el.day}" style="margin: 0;"></p>
+        <div style="display: flex; flex-direction: row;">Продолжительность:&nbsp<p th:text="${el.duration}" style="margin: 0;"></p>&nbspчас(а)</div>
+        <form th:if="${logged}" id="addSeсtionToList" method="get">
+            <input type="text" name="sectionId" th:value="${el.id}" style="display: none;">
+            <button th:if="${!profile}" class="btn" type="submit" style="border: 1px solid white; color: white; width: fit-content; justify-self: end;">Записаться</button>
+            <button th:if="${profile}" class="btn" type="submit" style="border: 1px solid white; color: white; width: fit-content; justify-self: end;">Удалить</button>
+        </form>
+    </div>
 </div>
 
 <div th:fragment="section-admin">

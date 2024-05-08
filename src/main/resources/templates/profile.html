@@ -23,8 +23,8 @@
             <div style="display: flex; flex-direction: row; wrap: wrap">до&nbsp<p id="endDate" th:text="${endDate}">12.12.2012</p></div>
         </div>
         <h2>Секции:</h2>
-        <div th:each="el : ${sections}">
-            <div th:insert="~{blocks/section :: section}"></div>
+        <div th:each="el : ${sections}" style="width: 100%">
+            <div th:insert="~{blocks/section :: section}" style="width: 100%"></div>
         </div>
     </div>
 
